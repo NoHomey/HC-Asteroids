@@ -1,0 +1,6 @@
+[package]
+name = "hc_asteroids"
+version = "0.1.0"
+authors = ["NoHomey <ivo_stratev@abv.bg>"]
+
+[dependencies]
