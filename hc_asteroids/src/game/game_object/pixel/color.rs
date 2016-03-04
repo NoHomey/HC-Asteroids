@@ -9,6 +9,19 @@ pub enum ColorName {
     White,
 }
 
+pub fn number_to_color(num: u8) -> ColorName {
+    match num {
+        0 => ColorName::Black,
+        1 => ColorName::Blue,
+        2 => ColorName::Red,
+        3 => ColorName::Purple,
+        4 => ColorName::Green,
+        5 => ColorName::Cyan,
+        6 => ColorName::Yellow,
+        _ => ColorName::White,
+    }
+}
+
 pub struct Color {
     b: bool,
     r: bool,
