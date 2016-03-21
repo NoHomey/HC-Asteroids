@@ -23,10 +23,10 @@ pub fn number_to_color(num: u8) -> ColorName {
 }
 
 pub struct Color {
-    b: bool,
-    r: bool,
-    g: bool,
-    pub color: u8,
+    blue: bool,
+    red: bool,
+    green: bool,
+    pub value: u8,
 }
 
 fn trf(val: bool) -> u16 {
@@ -37,14 +37,14 @@ impl Color {
     pub fn new(name: ColorName) -> Color {
         let value = name as u8;
         Color {
-            b: (value & 1) > 0,
-            r: (value & 2) > 0,
-            g: (value & 4) > 0,
-            color: value,
+            blue: (value & 1) > 0,
+            red: (value & 2) > 0,
+            green: (value & 4) > 0,
+            value: value,
         }
     }
     
     pub fn to_array(&self) -> [u16; 3] {
-       [trf(self.b), trf(self.r), trf(self.g)]
+       [trf(self.blue), trf(self.red), trf(self.green)]
     }
 }
